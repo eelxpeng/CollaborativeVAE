@@ -224,8 +224,7 @@ class CVAE:
                 if likelihood < likelihood_old:
                     print("likelihood is decreasing!")
 
-                recall = self.predict(users, test_users, params.M)
-                print("[iter=%04d], likelihood=%.5f, converge=%.10f, recall=%.5f" % (it, likelihood, converge, recall))
+                print("[iter=%04d], likelihood=%.5f, converge=%.10f" % (it, likelihood, converge))
 
         return likelihood
 
