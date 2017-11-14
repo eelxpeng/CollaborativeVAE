@@ -12,5 +12,7 @@ The program consists of two parts: pre-train in VAE manner and finetuning in CVA
 
 ### Note
 * For those who want to exactly reproduce the results in the paper, please note that the author used this evaluation code: lib/evaluatePaper.m to compute the recall for all methods, including baseline methods. However, the author also found out that it may not be exactly correct. Therefore, the author put a correct (as the author thought) evaluation code in lib/evaluationCorrect.m . The author found that the relative performance among all methods remain the same, however the absolute recall rates shift down a little. The following is the figure with the correct evaluation code:
-![Recall on citeulike-a](image/recall.png){: height="300px"}
+
+![Recall on citeulike-a](image/recall.png)
+
 If you want to compare with the model directly using the absolute recall rate, this number should be fair to compare with.
