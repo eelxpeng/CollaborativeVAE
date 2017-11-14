@@ -17,4 +17,4 @@ For those who want to exactly reproduce the results in the paper, please note th
 
 <img src="image/recall.png" width="350">
 
-If you want to compare with the model directly using the absolute recall rate, this number should be fair to compare with.
+If you want to compare with the model directly using the absolute recall rate, this number should be fair to compare with. However, the author recommends that you should put all baseline methods under the same setting with the same evaluation code for fair comparison.
