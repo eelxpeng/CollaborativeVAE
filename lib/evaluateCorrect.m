@@ -1,4 +1,4 @@
-function [recall] = evaluateCorrect(train_users, test_users, m_U, m_V, M)
+function [recall] = evaluate(train_users, test_users, m_U, m_V, M)
 m_num_users = size(m_U,1);
 m_num_items = size(m_V,1);
 
@@ -37,7 +37,8 @@ for i=1:n
    num_hit(ind, :) = re(:, 1:M);
    num_total(ind, :) = sum(re, 2);
 end
-
+num_hit(num_total(:,1)==0, :) = [];
+num_total(num_total(:, 1)==0, :)=[];
 recall = mean(cumsum(num_hit, 2)./repmat(num_total, 1, M), 1);
 
 
