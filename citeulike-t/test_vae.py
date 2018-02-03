@@ -5,12 +5,12 @@ import logging
 import sys
 import h5py
 sys.path.append("..")
-from lib.sdae import StackedAutoEncoder
+from lib.vae import VariationalAutoEncoder
 from lib.utils import *
 
 np.random.seed(0)
 tf.set_random_seed(0)
-init_logging("sdae.log")
+init_logging("vae.log")
 
 logging.info('loading data')
 # variables = scipy.io.loadmat("../data/citeulike-t/mult_nor.mat")
@@ -24,7 +24,7 @@ idx = np.random.rand(data.shape[0]) < 0.8
 train_X = data[idx]
 test_X = data[~idx]
 logging.info('initializing sdae model')
-model = StackedAutoEncoder(input_dim=20000, dims=[200, 100], z_dim=50, 
+model = VariationalAutoEncoder(input_dim=20000, dims=[200, 100], z_dim=50, 
 	activations=['sigmoid','sigmoid'], epoch=[50, 50], 
 	noise='mask-0.3' ,loss='cross-entropy', lr=0.01, batch_size=128, print_step=1)
 logging.info('fitting data starts...')
